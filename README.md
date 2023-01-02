@@ -2,7 +2,7 @@
 
 ## To start the application: 
 In the directory of the folder, run:
-\n
+<br />
 ``npm i``
-\n
+<br />
 ``npm start`` or ``node index.js``
