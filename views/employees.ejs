@@ -1,0 +1,53 @@
+<head>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Employees</h1>
+
+    <br>
+
+    <!-- Table containing eid, name, role, salary and update option -->
+    <table>
+        <tr>
+            <th>EID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Salary</th>
+            <th>Update</th>
+        </tr>
+        <!-- Loop through employees array and display each employee -->
+        <% for (let i=0; i < employees.length; i++) { %>
+            <tr>
+                <td>
+                    <%= employees[i].eid %>
+                </td>
+                <td>
+                    <%= employees[i].ename %>
+                </td>
+                <td>
+                    <%= employees[i].role %>
+                </td>
+                <td>
+                    <%= employees[i].salary %>
+                </td>
+                <td>
+                    <a href="/employees/edit/<%= employees[i].eid %>">Update</a>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+
+    <a href="/">Home</a>
+</body>

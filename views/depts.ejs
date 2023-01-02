@@ -1,0 +1,53 @@
+<head>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Departments</h1>
+
+    <br>
+
+    <!-- Table containing did, name, budget, location, and an option to delete -->
+    <table>
+        <tr>
+            <th>DID</th>
+            <th>Name</th>
+            <th>Budget</th>
+            <th>Location</th>
+            <th>Delete</th>
+        </tr>
+        <!-- Loop through the departments array and display the data -->
+        <% for (let i=0; i < depts.length; i++) { %>
+            <tr>
+                <td>
+                    <%= depts[i].did %>
+                </td>
+                <td>
+                    <%= depts[i].dname %>
+                </td>
+                <td>
+                    <%= depts[i].budget %>
+                </td>
+                <td>
+                    <%= depts[i].county %>
+                </td>
+                <td>
+                    <a href="/depts/delete/<%= depts[i].did %>">Delete</a>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+
+    <a href="/">Home</a>
+</body>

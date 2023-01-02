@@ -1,0 +1,37 @@
+<body>
+    <h1>Edit Employee</h1>
+
+    <!-- check for errors -->
+    <% if (errors !=undefined) { %>
+        <ul>
+            <% for (let error of errors) { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% } %>
+        </ul>
+        <% } %>
+
+
+            <!-- Form to update employee details -->
+            <form action="/employees/edit/<%= employee.eid %>" method="POST">
+                <label for="eid">EID</label>
+                <input type="text" id="eid" name="eid" value="<%= employee.eid %>" readonly>
+                <br>
+                <label for="ename">Name</label>
+                <input type="text" id="ename" name="ename" value="<%= employee.ename %>">
+                <br>
+                <label for="role">Role</label>
+                <select id="role" name="role">
+                    <option <%=employee.role=='Manager' ? 'selected' :'' %> value="Manager">Manager</option>
+                    <option <%=employee.role=='Employee' ? 'selected' :'' %> value="Employee">Employee</option>
+                </select>
+                <br>
+                <label for="salary">Salary</label>
+                <input type="text" id="salary" name="salary" value="<%= employee.salary %>">
+                <br>
+                <input type="submit" value="Update">
+            </form>
+
+            <a href="/">Home</a>
+</body>

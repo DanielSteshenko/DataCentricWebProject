@@ -1,0 +1,47 @@
+<head>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Employees (MongoDB)</h1>
+
+    <br>
+
+    <a href="/employeesMongoDB/add">Add Employee (MongoDB)</a>
+
+    <!-- Table containing eid, phone email -->
+    <table>
+        <tr>
+            <th>EID</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+        <!-- Loop through employees array and display each employee -->
+        <% for (let i=0; i < employees.length; i++) { %>
+            <tr>
+                <td>
+                    <%= employees[i]._id %>
+                </td>
+                <td>
+                    <%= employees[i].phone %>
+                </td>
+                <td>
+                    <%= employees[i].email %>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+
+    <a href="/">Home</a>
+</body>

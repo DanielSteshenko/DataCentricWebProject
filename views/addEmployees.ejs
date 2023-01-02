@@ -1,0 +1,58 @@
+<head>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <h1>Add Employees (MySQL)</h1>
+
+    <br>
+
+    <!-- Table containing eid, name, role, salary -->
+    <table>
+        <tr>
+            <th>EID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Salary</th>
+        </tr>
+        <!-- Loop through employees array and display each employee -->
+        <% for (let i=0; i < employees.length; i++) { %>
+            <tr>
+                <td>
+                    <%= employees[i].eid %>
+                </td>
+                <td>
+                    <%= employees[i].ename %>
+                </td>
+                <td>
+                    <%= employees[i].role %>
+                </td>
+                <td>
+                    <%= employees[i].salary %>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+
+    <br>
+
+    <!-- Form to add new employee -->
+    <button onclick="window.location.href='/addNewEmployee'">Add Employee</button>
+
+    <br>
+
+    <a href="/">Home</a>
+
+</body>

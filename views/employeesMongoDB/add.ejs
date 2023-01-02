@@ -1,0 +1,45 @@
+<head>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add Employee (MongoDB)</h1>
+    <br>
+
+    <!-- handle error -->
+    <% if (errors !=undefined) { %>
+        <% for (let error of errors) { %>
+            <li>
+                <%= error.msg %>
+            </li>
+            <% } %>
+                <% } %>
+
+                    <!-- Get eid, phone, email and make a POST request-->
+                    <form action="/employeesMongoDB/add" method="POST">
+                        <label>EID:</label>
+                        <input type="text" name="_id">
+                        <br>
+                        <label>Phone:</label>
+                        <input type="number" name="phone">
+                        <br>
+                        <label>Email:</label>
+                        <input type="text" name="email" inputmode="email">
+                        <br>
+                        <input type="submit" value="Add">
+                    </form>
+
+                    <br>
+                    <a href="/">Home</a>
+</body>
